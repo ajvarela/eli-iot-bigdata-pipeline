@@ -1,0 +1,1246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_0tll9vn" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.7.2">
+  <decision id="BR01" name="BR01">
+    <extensionElements>
+      <biodi:bounds x="150" y="530" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="input_1" label="Location">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>Location</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="BR01" name="BR01" typeRef="boolean" />
+      <rule id="DecisionRule_1y6gsgn">
+        <inputEntry id="UnaryTests_0m5mbb5">
+          <text>null</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1169jab">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0qci6pl">
+        <inputEntry id="UnaryTests_0rbfaa6">
+          <text>"", " "</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11ij5tu">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0r8i52n">
+        <inputEntry id="UnaryTests_0g0pvr2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0udtsjp">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="BR02" name="BR02">
+    <extensionElements>
+      <biodi:bounds x="250" y="620" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_0gpyjwl" hitPolicy="FIRST">
+      <input id="InputClause_0ncnqjl" label="Date">
+        <inputExpression id="LiteralExpression_13ubpmt" typeRef="string">
+          <text>Date</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0we7bv8" label="BR02" name="BR02" typeRef="boolean" />
+      <rule id="DecisionRule_10tvrvz">
+        <description>""</description>
+        <inputEntry id="UnaryTests_05vqhkw">
+          <text>null</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_039bktx">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01an717">
+        <inputEntry id="UnaryTests_14bsonj">
+          <text>"", " "</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zl8opu">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03mnde1">
+        <inputEntry id="UnaryTests_0m9rwh9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00dp0qo">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="BR03" name="BR03">
+    <extensionElements>
+      <biodi:bounds x="350" y="710" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_06zvswm" hitPolicy="FIRST">
+      <input id="InputClause_0exy8sg" label="Time">
+        <inputExpression id="LiteralExpression_1r6nchx" typeRef="string">
+          <text>Time</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0xktqnr" label="BR03" name="BR03" typeRef="boolean" />
+      <rule id="DecisionRule_1quom62">
+        <inputEntry id="UnaryTests_0eddwqq">
+          <text>null</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_101cuz2">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01rquyl">
+        <inputEntry id="UnaryTests_1rjit41">
+          <text>"", " "</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1sqyayl">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0sb4jwi">
+        <inputEntry id="UnaryTests_15c6p7m">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wxqs63">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="BR04" name="BR04">
+    <extensionElements>
+      <biodi:bounds x="500" y="610" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_1ixmr5z" hitPolicy="FIRST">
+      <input id="InputClause_1b1t6wl" label="VW30cm">
+        <inputExpression id="LiteralExpression_02ir3mq" typeRef="string">
+          <text>VW30cm</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_15ktj4u" label="T30cm">
+        <inputExpression id="LiteralExpression_0lpfa05" typeRef="string">
+          <text>T30cm</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_153id8g" label="BR04" name="BR04" typeRef="integer" />
+      <rule id="DecisionRule_1prey6k">
+        <description>S30 null</description>
+        <inputEntry id="UnaryTests_0mixa2e">
+          <text>null</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0emmkos">
+          <text>null</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fslbmq">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mof4zu">
+        <description>S30 Not Available</description>
+        <inputEntry id="UnaryTests_18xfcci">
+          <text>null, "", "NA"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kd0e0l">
+          <text>null, "", "NA"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_120idb1">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1n4u3i1">
+        <description>S30 Data</description>
+        <inputEntry id="UnaryTests_0wbrihw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_164yz5g">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12np2ff">
+          <text>2</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="BR05" name="BR05">
+    <extensionElements>
+      <biodi:bounds x="620" y="700" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_05j859x" hitPolicy="FIRST">
+      <input id="InputClause_0vx6ekj" label="VW60cm">
+        <inputExpression id="LiteralExpression_03d6h5j" typeRef="string">
+          <text>VW60cm</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0jtz3ri" label="T60cm">
+        <inputExpression id="LiteralExpression_0ytfdax" typeRef="string">
+          <text>T60cm</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1lz3nz6" label="BR05" name="BR05" typeRef="integer" />
+      <rule id="DecisionRule_0lpsx1m">
+        <description>S60 null</description>
+        <inputEntry id="UnaryTests_1wxo2m0">
+          <text>null</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yfotvb">
+          <text>null</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0e5s75m">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11pe6e2">
+        <description>S60 Not Available</description>
+        <inputEntry id="UnaryTests_04rx1k1">
+          <text>null, "", "NA"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16k77w8">
+          <text>null, "", "NA"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0olkmu9">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0eb10y3">
+        <description>S60 Data</description>
+        <inputEntry id="UnaryTests_1bkjo4s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0inn87f">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06w0obx">
+          <text>2</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="BR06" name="BR06">
+    <extensionElements>
+      <biodi:bounds x="700" y="610" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_1tqpz22" hitPolicy="FIRST">
+      <input id="InputClause_01vvxsr" label="VW90cm">
+        <inputExpression id="LiteralExpression_0zmzo6i" typeRef="string">
+          <text>VW90cm</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1upzehy" label="T90cm">
+        <inputExpression id="LiteralExpression_0pia5um" typeRef="string">
+          <text>T90cm</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1vs4vsh" label="BR06" name="BR06" typeRef="integer" />
+      <rule id="DecisionRule_015tyva">
+        <description>S90 null</description>
+        <inputEntry id="UnaryTests_0m6vnyo">
+          <text>null</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f7nquk">
+          <text>null</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0aqgt2j">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1809fl4">
+        <description>S90 Not Available</description>
+        <inputEntry id="UnaryTests_1jjtpn9">
+          <text>null, "", "NA"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ui3gfv">
+          <text>null, "", "NA"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uieu3d">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0o77tar">
+        <description>S90 Data</description>
+        <inputEntry id="UnaryTests_1vf5y6m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kzm16y">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wmf6ar">
+          <text>2</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="BR07" name="BR07">
+    <extensionElements>
+      <biodi:bounds x="860" y="700" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_0ithfz3" hitPolicy="FIRST">
+      <input id="InputClause_1qri58f" label="VW120cm">
+        <inputExpression id="LiteralExpression_0zzn7uu" typeRef="string">
+          <text>VW120cm</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1eqap2i" label="T120cm">
+        <inputExpression id="LiteralExpression_1tkqyku" typeRef="string">
+          <text>T120cm</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1qyuuhu" label="BR07" name="BR07" typeRef="integer" />
+      <rule id="DecisionRule_06oa0hl">
+        <description>S120 null</description>
+        <inputEntry id="UnaryTests_1ewnx5h">
+          <text>null</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02f9ogd">
+          <text>null</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1uab477">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1nqz8nt">
+        <description>S120 Not Available</description>
+        <inputEntry id="UnaryTests_0rnt62e">
+          <text>null, "", "NA"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qp531m">
+          <text>null, "", "NA"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mmjqte">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_14vjerk">
+        <description>S120 Data</description>
+        <inputEntry id="UnaryTests_19dydki">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05ioqjc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ptls0w">
+          <text>2</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="BR08" name="BR08">
+    <extensionElements>
+      <biodi:bounds x="940" y="610" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_1dkr6rr" hitPolicy="FIRST">
+      <input id="InputClause_0oo49s3" label="VW150cm">
+        <inputExpression id="LiteralExpression_0pvlv02" typeRef="string">
+          <text>VW150cm</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1vwvhcg" label="T150cm">
+        <inputExpression id="LiteralExpression_0z1rl4l" typeRef="string">
+          <text>T150cm</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0nxfm4z" label="BR08" name="BR08" typeRef="integer" />
+      <rule id="DecisionRule_0eaf85f">
+        <description>S150 null</description>
+        <inputEntry id="UnaryTests_09shx6w">
+          <text>null</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fnezif">
+          <text>null</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ext25a">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0iv3q7j">
+        <description>S150 Not Available</description>
+        <inputEntry id="UnaryTests_08fyujz">
+          <text>null, "", "NA"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eaq1zo">
+          <text>null, "", "NA"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vz96jp">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bmwbig">
+        <description>S150 Data</description>
+        <inputEntry id="UnaryTests_01g7g4a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rd5v9j">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tceiii">
+          <text>2</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="DQA" name="DQA">
+    <extensionElements>
+      <biodi:bounds x="900" y="220" width="180" height="80" />
+      <biodi:edge source="Accuracy">
+        <biodi:waypoints x="1372" y="350" />
+        <biodi:waypoints x="1070" y="300" />
+      </biodi:edge>
+      <biodi:edge source="Completeness">
+        <biodi:waypoints x="618" y="350" />
+        <biodi:waypoints x="920" y="300" />
+      </biodi:edge>
+    </extensionElements>
+    <informationRequirement>
+      <requiredDecision href="#Accuracy" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#Completeness" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1hsykp7" hitPolicy="FIRST">
+      <input id="InputClause_0ll3r84" label="Completeness">
+        <inputExpression id="LiteralExpression_05177yy" typeRef="integer">
+          <text>Completeness</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0d44tna" label="Accuracy">
+        <inputExpression id="LiteralExpression_1crjq7f" typeRef="integer">
+          <text>Accuracy</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0xavo28" label="DQA" name="DQA" typeRef="string" />
+      <rule id="DecisionRule_1wmhsih">
+        <description>BR.DQA.01 - 5 data sensor "realistic"</description>
+        <inputEntry id="UnaryTests_0lfroh9">
+          <text>&gt;=5</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0shg2nz">
+          <text>&gt;=80</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02gq0tm">
+          <text>"suitable"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zcxqxl">
+        <description>BR.DQA.02 - 3 or 4 data sensor "realistic"</description>
+        <inputEntry id="UnaryTests_1s0iqgf">
+          <text>&gt;=3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ji2fqr">
+          <text>&gt;=40</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tku5sp">
+          <text>"enough quality"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fc293q">
+        <description>BR.DQA.04 - less than 3 data "realistic"</description>
+        <inputEntry id="UnaryTests_1lleukb">
+          <text>&gt;=1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mmgsqk">
+          <text>&lt;40</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hmgo24">
+          <text>"bad quality"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bwsvms">
+        <description>BR.DQA.05 - no value data sensor</description>
+        <inputEntry id="UnaryTests_1khmnur">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s2zc0c">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pdofic">
+          <text>"non usable"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Accuracy" name="Accuracy">
+    <extensionElements>
+      <biodi:bounds x="1340" y="350" width="180" height="80" />
+      <biodi:edge source="BR09">
+        <biodi:waypoints x="1276" y="610" />
+        <biodi:waypoints x="1350" y="430" />
+      </biodi:edge>
+      <biodi:edge source="BR10">
+        <biodi:waypoints x="1328" y="700" />
+        <biodi:waypoints x="1380" y="430" />
+      </biodi:edge>
+      <biodi:edge source="BR11">
+        <biodi:waypoints x="1455" y="610" />
+        <biodi:waypoints x="1430" y="430" />
+      </biodi:edge>
+      <biodi:edge source="BR12">
+        <biodi:waypoints x="1522" y="700" />
+        <biodi:waypoints x="1470" y="430" />
+      </biodi:edge>
+      <biodi:edge source="BR13">
+        <biodi:waypoints x="1633" y="610" />
+        <biodi:waypoints x="1510" y="430" />
+      </biodi:edge>
+    </extensionElements>
+    <informationRequirement>
+      <requiredDecision href="#BR09" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#BR10" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#BR11" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#BR12" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#BR13" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0j8jjft" hitPolicy="COLLECT" aggregation="SUM">
+      <input id="InputClause_0rqn194" label="BR09" camunda:inputVariable="BR09">
+        <inputExpression id="LiteralExpression_0v3cwyv" typeRef="string">
+          <text>BR09</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1pxkbcm" label="BR10" camunda:inputVariable="BR10">
+        <inputExpression id="LiteralExpression_1trc71g" typeRef="string">
+          <text>BR10</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0rnm0j4" label="BR11" camunda:inputVariable="BR11">
+        <inputExpression id="LiteralExpression_08nqwfj" typeRef="string">
+          <text>BR11</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1qeqwiy" label="BR12" camunda:inputVariable="BR12">
+        <inputExpression id="LiteralExpression_03qib46" typeRef="string">
+          <text>BR12</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1sj7wgx" label="Accuracy" name="Accuracy" typeRef="integer" />
+      <rule id="DecisionRule_1o350fa">
+        <description>BR.DQM.06</description>
+        <inputEntry id="UnaryTests_0x8o9xo">
+          <text>"realistic"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_130rqyw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zspx6g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07d14kx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1i5eays">
+          <text>20</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0f715j5">
+        <description>BR.DQM.07</description>
+        <inputEntry id="UnaryTests_04icmdf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0en7ney">
+          <text>"realistic"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1efef5d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ecpic0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d3ozsq">
+          <text>20</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wpbzsr">
+        <description>BR.DQM.08</description>
+        <inputEntry id="UnaryTests_13xibdg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zbhkjw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s3xbdr">
+          <text>"realistic"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1etxsbn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jw3yac">
+          <text>20</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0k7gnyq">
+        <description>BR.DQM.09</description>
+        <inputEntry id="UnaryTests_157knul">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1robyea">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h3rm0f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w8oswu">
+          <text>"realistic"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rmghyu">
+          <text>20</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gfuclf">
+        <inputEntry id="UnaryTests_1wigda8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v559k0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09ex9sm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zyeton">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0348xpq">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="BR09" name="BR09">
+    <extensionElements>
+      <biodi:bounds x="1170" y="610" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_0dnfnt5" hitPolicy="FIRST">
+      <input id="InputClause_00toe1v" label="VW30cm">
+        <inputExpression id="LiteralExpression_0p50h4s" typeRef="double">
+          <text>VW30cm</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1p49fd1" label="T30cm">
+        <inputExpression id="LiteralExpression_17rdl9d" typeRef="double">
+          <text>T30cm</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0wehzcj" label="BR09" name="BR09" typeRef="string" />
+      <rule id="DecisionRule_0h16x8g">
+        <inputEntry id="UnaryTests_0zqdqti">
+          <text>[0.150..0.700]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lmtd5x">
+          <text>[1..45]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ltdqd2">
+          <text>"realistic"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gf9g7u">
+        <inputEntry id="UnaryTests_1rfwb1v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p01rf5">
+          <text>&lt;1, &gt;45</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0emfq60">
+          <text>"unusual"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0y3wwy0">
+        <inputEntry id="UnaryTests_0xy8r5h">
+          <text>&gt;0.700</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pxb7yu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1r66wld">
+          <text>"unusual"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zq1k8v">
+        <inputEntry id="UnaryTests_0wmrtjn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_176miaz">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fgr37q">
+          <text>"unrealistic"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="BR10" name="BR10">
+    <extensionElements>
+      <biodi:bounds x="1230" y="700" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_1iani04" hitPolicy="FIRST">
+      <input id="InputClause_1i4igje" label="VW60cm">
+        <inputExpression id="LiteralExpression_0lp9xrd" typeRef="double">
+          <text>VW60cm</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_15km9ak" label="T60cm">
+        <inputExpression id="LiteralExpression_0cza95h" typeRef="double">
+          <text>T60cm</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_07y2m22" label="BR10" name="BR10" typeRef="string" />
+      <rule id="DecisionRule_17qttea">
+        <inputEntry id="UnaryTests_0uj6l6i">
+          <text>[0.150..0.700]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00izw85">
+          <text>[1..45]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0n4mpra">
+          <text>"realistic"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dvl1we">
+        <inputEntry id="UnaryTests_0g7zk3v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w4jzba">
+          <text>&lt;1, &gt;45</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xmbaya">
+          <text>"unusual"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11wru8z">
+        <inputEntry id="UnaryTests_1pxql9a">
+          <text>&gt;0.700</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14jm7f6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nygpt1">
+          <text>"unusual"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0a8vc7x">
+        <inputEntry id="UnaryTests_0aeei2l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18t5t6b">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1d4k9h8">
+          <text>"unrealistic"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="BR11" name="BR11">
+    <extensionElements>
+      <biodi:bounds x="1370" y="610" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_0x8vb9t" hitPolicy="FIRST">
+      <input id="InputClause_0hfrsff" label="VW90cm">
+        <inputExpression id="LiteralExpression_0nsu3x2" typeRef="double">
+          <text>VW90cm</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1furiyr" label="T90cm">
+        <inputExpression id="LiteralExpression_0xuxtxp" typeRef="double">
+          <text>T90cm</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_01cqv3i" label="BR11" name="BR11" typeRef="string" />
+      <rule id="DecisionRule_0hcrlqs">
+        <inputEntry id="UnaryTests_0kt3dvw">
+          <text>[0.150..0.700]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a6ghhf">
+          <text>[1..45]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1fpxu24">
+          <text>"realistic"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0mb4v1t">
+        <inputEntry id="UnaryTests_1d2xyu2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fpafww">
+          <text>&lt;1, &gt;45</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wizrp2">
+          <text>"unusual"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1d4znd9">
+        <inputEntry id="UnaryTests_1gymbwr">
+          <text>&gt;0.700</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vvnod0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kr89gm">
+          <text>"unusual"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1752rfz">
+        <inputEntry id="UnaryTests_1vwvtbq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jezor1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ndfpte">
+          <text>"unrealistic"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="BR12" name="BR12">
+    <extensionElements>
+      <biodi:bounds x="1440" y="700" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_1oebe2n" hitPolicy="FIRST">
+      <input id="InputClause_0ulgvul" label="VW120cm">
+        <inputExpression id="LiteralExpression_1hrmr1f" typeRef="double">
+          <text>VW120cm</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_00ajm7r" label="T120cm">
+        <inputExpression id="LiteralExpression_1houxv5" typeRef="double">
+          <text>T120cm</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1y21lfm" label="BR12" name="BR12" typeRef="string" />
+      <rule id="DecisionRule_1gc8dyj">
+        <inputEntry id="UnaryTests_1vqhz1s">
+          <text>[0.150..0.700]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mqdd3m">
+          <text>[1..45]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14z2l2r">
+          <text>"realistic"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16q7mlm">
+        <inputEntry id="UnaryTests_13h59qa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03bxa5w">
+          <text>&lt;1, &gt;45</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1t8fgjn">
+          <text>"unusual"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cs6473">
+        <inputEntry id="UnaryTests_08rkl73">
+          <text>&gt;0.700</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05b1gvq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jf3pq2">
+          <text>"unusual"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1dbm34x">
+        <inputEntry id="UnaryTests_1n1bjms">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04x0u82">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1edn975">
+          <text>"unrealistic"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="BR13" name="BR13">
+    <extensionElements>
+      <biodi:bounds x="1570" y="610" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_1hbgx20" hitPolicy="FIRST">
+      <input id="InputClause_10hiewf" label="VW150cm">
+        <inputExpression id="LiteralExpression_0xowz5v" typeRef="double">
+          <text>VW150cm</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1dx2t5y" label="T150cm">
+        <inputExpression id="LiteralExpression_16yjamh" typeRef="double">
+          <text>T150cm</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_08vlap9" label="BR13" name="BR13" typeRef="string" />
+      <rule id="DecisionRule_1pzahho">
+        <inputEntry id="UnaryTests_1k9znca">
+          <text>[0.150..0.700]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w73jpl">
+          <text>[1..45]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tgjjsb">
+          <text>"realistic"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jwca29">
+        <inputEntry id="UnaryTests_1pmetsn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06e45ui">
+          <text>&lt;1, &gt;45</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ullt6t">
+          <text>"unusual"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11z1151">
+        <inputEntry id="UnaryTests_1phtozh">
+          <text>&gt;0.700</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tpgzj6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16mmk4a">
+          <text>"unusual"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0i97v2s">
+        <inputEntry id="UnaryTests_02s5qtu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ei90l5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1951ak9">
+          <text>"unrealistic"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Completeness" name="Completeness">
+    <extensionElements>
+      <biodi:bounds x="470" y="350" width="180" height="80" />
+      <biodi:edge source="BR01">
+        <biodi:waypoints x="257" y="530" />
+        <biodi:waypoints x="480" y="430" />
+      </biodi:edge>
+      <biodi:edge source="BR02">
+        <biodi:waypoints x="380" y="620" />
+        <biodi:waypoints x="510" y="430" />
+      </biodi:edge>
+      <biodi:edge source="BR03">
+        <biodi:waypoints x="458" y="710" />
+        <biodi:waypoints x="530" y="430" />
+      </biodi:edge>
+      <biodi:edge source="BR04">
+        <biodi:waypoints x="586" y="610" />
+        <biodi:waypoints x="610" y="430" />
+      </biodi:edge>
+      <biodi:edge source="BR05">
+        <biodi:waypoints x="700" y="700" />
+        <biodi:waypoints x="630" y="430" />
+      </biodi:edge>
+      <biodi:edge source="BR06">
+        <biodi:waypoints x="754" y="610" />
+        <biodi:waypoints x="650" y="430" />
+      </biodi:edge>
+      <biodi:edge source="BR07">
+        <biodi:waypoints x="913" y="700" />
+        <biodi:waypoints x="650" y="420" />
+      </biodi:edge>
+      <biodi:edge source="BR08">
+        <biodi:waypoints x="967" y="610" />
+        <biodi:waypoints x="650" y="410" />
+      </biodi:edge>
+    </extensionElements>
+    <informationRequirement>
+      <requiredDecision href="#BR01" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#BR02" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#BR03" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#BR04" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#BR05" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#BR06" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#BR07" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#BR08" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1x5od6l" hitPolicy="COLLECT" aggregation="SUM">
+      <input id="InputClause_0bcuf1d" label="BR01" camunda:inputVariable="BR01">
+        <inputExpression id="LiteralExpression_055hqgt" typeRef="boolean">
+          <text>BR01</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1tiqqmz" label="BR02" camunda:inputVariable="BR02">
+        <inputExpression id="LiteralExpression_05t6pfm" typeRef="boolean">
+          <text>BR02</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1fd9fip" label="BR03" camunda:inputVariable="BR03">
+        <inputExpression id="LiteralExpression_1y56vuj" typeRef="boolean">
+          <text>BR03</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0advj6i" label="BR04" camunda:inputVariable="BR04">
+        <inputExpression id="LiteralExpression_0ms5wij" typeRef="integer">
+          <text>BR04</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0fw629u" label="BR05" camunda:inputVariable="BR05">
+        <inputExpression id="LiteralExpression_0jy6gte" typeRef="integer">
+          <text>BR05</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1662jct" label="BR06" camunda:inputVariable="BR06">
+        <inputExpression id="LiteralExpression_1qdf3ot" typeRef="integer">
+          <text>BR06</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0jl8rul" label="BR07" camunda:inputVariable="BR07">
+        <inputExpression id="LiteralExpression_160behz" typeRef="integer">
+          <text>BR07</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0hi5eql" label="BR08" camunda:inputVariable="BR08">
+        <inputExpression id="LiteralExpression_06lwjhv" typeRef="integer">
+          <text>BR08</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_09jnq5x" label="Completeness" name="Completeness" typeRef="integer" />
+      <rule id="DecisionRule_1k0arxo">
+        <description>BR.DQM.01</description>
+        <inputEntry id="UnaryTests_05fjdqr">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1geziel">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18cazci">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0znpzji">
+          <text>&gt;=2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11661yz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ksrtoj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17y3rk9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_028p5u5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bhc64k">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ovu2i5">
+        <description>BR.DQM.02</description>
+        <inputEntry id="UnaryTests_163c4d3">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uq8802">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f2q708">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qc92ap">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11ptekl">
+          <text>&gt;=2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zdckf2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rjdkjm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tjmhfs">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1b1q4th">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17l4vzq">
+        <description>BR.DQM.03</description>
+        <inputEntry id="UnaryTests_1wmmamb">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1daweu3">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06oguw5">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04ay0kc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j2um8h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07zxzf7">
+          <text>&gt;=2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vea4bh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06tidq7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1c3p4xe">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0b34sk4">
+        <description>BR.DQM.04</description>
+        <inputEntry id="UnaryTests_13qikjj">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00ks0xe">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13cr1qj">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nici1w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nm7ajx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04m7q8z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03kew2f">
+          <text>&gt;=2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09qh7tc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uepoiz">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1lmqcxb">
+        <description>BR.DQM.05</description>
+        <inputEntry id="UnaryTests_1xbny86">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i376k6">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03qqdl2">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09y0bql">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bzyia7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15a9tr4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mv7vgv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a36u0f">
+          <text>&gt;=2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dnhsjh">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07ip93d">
+        <inputEntry id="UnaryTests_0u3c2hs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jvkn7a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14el82q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g95xlc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u556c8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fhky2j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vfe1og">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sos9f2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18ul46u">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="DUD" name="DUD">
+    <extensionElements>
+      <biodi:bounds x="900" y="80" width="180" height="80" />
+      <biodi:edge source="DQA">
+        <biodi:waypoints x="990" y="220" />
+        <biodi:waypoints x="990" y="170" />
+      </biodi:edge>
+    </extensionElements>
+    <informationRequirement>
+      <requiredDecision href="#DQA" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0ow3bq2" hitPolicy="FIRST">
+      <input id="InputClause_0r9v66l" label="DQA">
+        <inputExpression id="LiteralExpression_1786l6e" typeRef="string">
+          <text>DQA</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0rlq6nr" label="DUD" name="DUD" typeRef="string" />
+      <rule id="DecisionRule_12prryw">
+        <inputEntry id="UnaryTests_102900t">
+          <text>"suitable", "enough quality"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ji4jmv">
+          <text>"use"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1u3tgnq">
+        <inputEntry id="UnaryTests_1bfv1qq">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cju8mk">
+          <text>"do not use"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

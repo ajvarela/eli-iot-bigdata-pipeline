@@ -1,0 +1,561 @@
+[
+    {
+        "id": "16d7fc4a1a49f696",
+        "type": "tab",
+        "label": "IoT",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "cd487f2539b4902c",
+        "type": "delay",
+        "z": "16d7fc4a1a49f696",
+        "name": "",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "0",
+        "randomLast": "2000",
+        "randomUnits": "milliseconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 340,
+        "wires": [
+            [
+                "43c99a271e92a1a5"
+            ]
+        ]
+    },
+    {
+        "id": "40d1d520b140fc50",
+        "type": "debug",
+        "z": "16d7fc4a1a49f696",
+        "name": "Prueba",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "43c99a271e92a1a5",
+        "type": "function",
+        "z": "16d7fc4a1a49f696",
+        "name": "VW30cm",
+        "func": "function getRandom(min, max) {\n  return Math.random() * (max - min) + min;\n}\n\nvar r = getRandom(0, 100);\n\nvar value = \"N/A\"\n\nif(r >= 1) {\n    value = Math.trunc(getRandom(0, 1)*100)/100; // 100 = truncate 2 decimals\n}\n\nvar r2 = getRandom(0, 100);\n\nvar location = \"N/A\"\n\nif(r2 >= 2) {\n    location = \"CAF0\"+ parseInt(getRandom(1,6));\n}\n\nvar timestamp = Date.now();\nvar sensor = \"VW30cm\"\n\n\nmsg = {};\nmsg.payload = location + \" \" + sensor + \" \" + value + \" \" + timestamp;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 340,
+        "wires": [
+            [
+                "4c0f85ac8ee29033",
+                "40d1d520b140fc50",
+                "cd487f2539b4902c"
+            ]
+        ]
+    },
+    {
+        "id": "4c0f85ac8ee29033",
+        "type": "Kafka Producer",
+        "z": "16d7fc4a1a49f696",
+        "name": "",
+        "broker": "44b7aa4c.212894",
+        "topic": "iot",
+        "topicSlash2dot": false,
+        "requireAcks": 1,
+        "ackTimeoutMs": 100,
+        "partitionerType": 0,
+        "key": "lk",
+        "partition": 0,
+        "attributes": 0,
+        "connectionType": "Producer",
+        "convertFromJson": false,
+        "x": 940,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "82096c304fd53206",
+        "type": "inject",
+        "z": "16d7fc4a1a49f696",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 800,
+        "wires": [
+            [
+                "cd487f2539b4902c",
+                "660b69934c9b5c8d",
+                "c01deaeb46eba08c",
+                "dfa85687f3da7710",
+                "abe3c80825918036",
+                "ceaa4e7031d80fec",
+                "959636ef02f77b58",
+                "c7d625ef06e02142",
+                "a940e2a94f8e11f7",
+                "cb056a1d1fd65f75"
+            ]
+        ]
+    },
+    {
+        "id": "660b69934c9b5c8d",
+        "type": "delay",
+        "z": "16d7fc4a1a49f696",
+        "name": "",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "0",
+        "randomLast": "2500",
+        "randomUnits": "milliseconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 440,
+        "wires": [
+            [
+                "56d0edb74c84c41b"
+            ]
+        ]
+    },
+    {
+        "id": "56d0edb74c84c41b",
+        "type": "function",
+        "z": "16d7fc4a1a49f696",
+        "name": "VW60cm",
+        "func": "function getRandom(min, max) {\n  return Math.random() * (max - min) + min;\n}\n\nvar r = getRandom(0, 100);\n\nvar value = \"N/A\"\n\nif(r >= 4) {\n    value = Math.trunc(getRandom(0, 1)*100)/100; // 100 = truncate 2 decimals\n}\n\nvar r2 = getRandom(0, 100);\n\nvar location = \"N/A\"\n\nif(r2 >= 2) {\n    location = \"CAF0\"+ parseInt(getRandom(1,6));\n}\n\nvar timestamp = Date.now();\nvar sensor = \"VW60cm\"\n\n\nmsg = {};\nmsg.payload = location + \" \" + sensor + \" \" + value + \" \" + timestamp;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 440,
+        "wires": [
+            [
+                "660b69934c9b5c8d",
+                "4c0f85ac8ee29033",
+                "40d1d520b140fc50"
+            ]
+        ]
+    },
+    {
+        "id": "c01deaeb46eba08c",
+        "type": "delay",
+        "z": "16d7fc4a1a49f696",
+        "name": "",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "0",
+        "randomLast": "3000",
+        "randomUnits": "milliseconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 540,
+        "wires": [
+            [
+                "6db3b2fba8a918e5"
+            ]
+        ]
+    },
+    {
+        "id": "6db3b2fba8a918e5",
+        "type": "function",
+        "z": "16d7fc4a1a49f696",
+        "name": "VW90cm",
+        "func": "function getRandom(min, max) {\n  return Math.random() * (max - min) + min;\n}\n\nvar r = getRandom(0, 100);\n\nvar value = \"N/A\"\n\nif(r >= 6) {\n    value = Math.trunc(getRandom(0, 1)*100)/100; // 100 = truncate 2 decimals\n}\n\nvar r2 = getRandom(0, 100);\n\nvar location = \"N/A\"\n\nif(r2 >= 2) {\n    location = \"CAF0\"+ parseInt(getRandom(1,6));\n}\n\nvar timestamp = Date.now();\nvar sensor = \"VW90cm\"\n\n\nmsg = {};\nmsg.payload = location + \" \" + sensor + \" \" + value + \" \" + timestamp;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 540,
+        "wires": [
+            [
+                "c01deaeb46eba08c",
+                "4c0f85ac8ee29033",
+                "40d1d520b140fc50"
+            ]
+        ]
+    },
+    {
+        "id": "7be73ede4bf623ed",
+        "type": "function",
+        "z": "16d7fc4a1a49f696",
+        "name": "VW120cm",
+        "func": "function getRandom(min, max) {\n  return Math.random() * (max - min) + min;\n}\n\nvar r = getRandom(0, 100);\n\nvar value = \"N/A\"\n\nif(r >= 8) {\n    value = Math.trunc(getRandom(0, 1)*100)/100; // 100 = truncate 2 decimals\n}\n\nvar r2 = getRandom(0, 100);\n\nvar location = \"N/A\"\n\nif(r2 >= 2) {\n    location = \"CAF0\"+ parseInt(getRandom(1,6));\n}\n\nvar timestamp = Date.now();\nvar sensor = \"VW120cm\"\n\n\nmsg = {};\nmsg.payload = location + \" \" + sensor + \" \" + value + \" \" + timestamp;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 640,
+        "wires": [
+            [
+                "dfa85687f3da7710",
+                "4c0f85ac8ee29033",
+                "40d1d520b140fc50"
+            ]
+        ]
+    },
+    {
+        "id": "dfa85687f3da7710",
+        "type": "delay",
+        "z": "16d7fc4a1a49f696",
+        "name": "",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "0",
+        "randomLast": "3500",
+        "randomUnits": "milliseconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 640,
+        "wires": [
+            [
+                "7be73ede4bf623ed"
+            ]
+        ]
+    },
+    {
+        "id": "3c6c9fd311d50970",
+        "type": "function",
+        "z": "16d7fc4a1a49f696",
+        "name": "VW150cm",
+        "func": "function getRandom(min, max) {\n  return Math.random() * (max - min) + min;\n}\n\nvar r = getRandom(0, 100);\n\nvar value = \"N/A\"\n\nif(r >= 10) {\n    value = Math.trunc(getRandom(0, 1)*100)/100; // 100 = truncate 2 decimals\n}\n\nvar r2 = getRandom(0, 100);\n\nvar location = \"N/A\"\n\nif(r2 >= 2) {\n    location = \"CAF0\"+ parseInt(getRandom(1,6));\n}\n\nvar timestamp = Date.now();\nvar sensor = \"VW150cm\"\n\n\nmsg = {};\nmsg.payload = location + \" \" + sensor + \" \" + value + \" \" + timestamp;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 740,
+        "wires": [
+            [
+                "abe3c80825918036",
+                "4c0f85ac8ee29033",
+                "40d1d520b140fc50"
+            ]
+        ]
+    },
+    {
+        "id": "abe3c80825918036",
+        "type": "delay",
+        "z": "16d7fc4a1a49f696",
+        "name": "",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "0",
+        "randomLast": "4000",
+        "randomUnits": "milliseconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 740,
+        "wires": [
+            [
+                "3c6c9fd311d50970"
+            ]
+        ]
+    },
+    {
+        "id": "3dd32caeb1e6fbc7",
+        "type": "function",
+        "z": "16d7fc4a1a49f696",
+        "name": "T150cm",
+        "func": "function getRandom(min, max) {\n  return Math.random() * (max - min) + min;\n}\n\nvar r = getRandom(0, 100);\n\nvar value = \"N/A\"\n\nif(r >= 10) {\n    value = Math.trunc(getRandom(0, 50)*100)/100; // 100 = truncate 2 decimals\n}\n\nvar r2 = getRandom(0, 100);\n\nvar location = \"N/A\"\n\nif(r2 >= 2) {\n    location = \"CAF0\"+ parseInt(getRandom(1,6));\n}\n\nvar timestamp = Date.now();\nvar sensor = \"T150cm\"\n\n\nmsg = {};\nmsg.payload = location + \" \" + sensor + \" \" + value + \" \" + timestamp;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 1240,
+        "wires": [
+            [
+                "cb056a1d1fd65f75",
+                "40d1d520b140fc50",
+                "4c0f85ac8ee29033"
+            ]
+        ]
+    },
+    {
+        "id": "f6ad756fcf7e6f06",
+        "type": "function",
+        "z": "16d7fc4a1a49f696",
+        "name": "T120cm",
+        "func": "function getRandom(min, max) {\n  return Math.random() * (max - min) + min;\n}\n\nvar r = getRandom(0, 100);\n\nvar value = \"N/A\"\n\nif(r >= 8) {\n    value = Math.trunc(getRandom(0, 50)*100)/100; // 100 = truncate 2 decimals\n}\n\nvar r2 = getRandom(0, 100);\n\nvar location = \"N/A\"\n\nif(r2 >= 2) {\n    location = \"CAF0\"+ parseInt(getRandom(1,6));\n}\n\nvar timestamp = Date.now();\nvar sensor = \"T120cm\"\n\n\nmsg = {};\nmsg.payload = location + \" \" + sensor + \" \" + value + \" \" + timestamp;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 1140,
+        "wires": [
+            [
+                "a940e2a94f8e11f7",
+                "40d1d520b140fc50",
+                "4c0f85ac8ee29033"
+            ]
+        ]
+    },
+    {
+        "id": "78e62d0e9e2aa4ab",
+        "type": "function",
+        "z": "16d7fc4a1a49f696",
+        "name": "T90cm",
+        "func": "function getRandom(min, max) {\n  return Math.random() * (max - min) + min;\n}\n\nvar r = getRandom(0, 100);\n\nvar value = \"N/A\"\n\nif(r >= 6) {\n    value = Math.trunc(getRandom(0, 50)*100)/100; // 100 = truncate 2 decimals\n}\n\nvar r2 = getRandom(0, 100);\n\nvar location = \"N/A\"\n\nif(r2 >= 2) {\n    location = \"CAF0\"+ parseInt(getRandom(1,6));\n}\n\nvar timestamp = Date.now();\nvar sensor = \"T90cm\"\n\n\nmsg = {};\nmsg.payload = location + \" \" + sensor + \" \" + value + \" \" + timestamp;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 1040,
+        "wires": [
+            [
+                "c7d625ef06e02142",
+                "40d1d520b140fc50",
+                "4c0f85ac8ee29033"
+            ]
+        ]
+    },
+    {
+        "id": "8266b665c2f1de1f",
+        "type": "function",
+        "z": "16d7fc4a1a49f696",
+        "name": "T60cm",
+        "func": "function getRandom(min, max) {\n  return Math.random() * (max - min) + min;\n}\n\nvar r = getRandom(0, 100);\n\nvar value = \"N/A\"\n\nif(r >= 4) {\n    value = Math.trunc(getRandom(0, 50)*100)/100; // 100 = truncate 2 decimals\n}\n\nvar r2 = getRandom(0, 100);\n\nvar location = \"N/A\"\n\nif(r2 >= 2) {\n    location = \"CAF0\"+ parseInt(getRandom(1,6));\n}\n\nvar timestamp = Date.now();\nvar sensor = \"T60cm\"\n\n\nmsg = {};\nmsg.payload = location + \" \" + sensor + \" \" + value + \" \" + timestamp;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 940,
+        "wires": [
+            [
+                "959636ef02f77b58",
+                "40d1d520b140fc50",
+                "4c0f85ac8ee29033"
+            ]
+        ]
+    },
+    {
+        "id": "cd4f032f11629f2c",
+        "type": "function",
+        "z": "16d7fc4a1a49f696",
+        "name": "T30cm",
+        "func": "function getRandom(min, max) {\n  return Math.random() * (max - min) + min;\n}\n\nvar r = getRandom(0, 100);\n\nvar value = \"N/A\"\n\nif(r >= 2) {\n    value = Math.trunc(getRandom(0, 50)*100)/100; // 100 = truncate 2 decimals\n}\n\nvar r2 = getRandom(0, 100);\n\nvar location = \"N/A\"\n\nif(r2 >= 2) {\n    location = \"CAF0\"+ parseInt(getRandom(1,6));\n}\n\nvar timestamp = Date.now();\nvar sensor = \"T30cm\"\n\n\nmsg = {};\nmsg.payload = location + \" \" + sensor + \" \" + value + \" \" + timestamp;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 840,
+        "wires": [
+            [
+                "ceaa4e7031d80fec",
+                "40d1d520b140fc50",
+                "4c0f85ac8ee29033"
+            ]
+        ]
+    },
+    {
+        "id": "ceaa4e7031d80fec",
+        "type": "delay",
+        "z": "16d7fc4a1a49f696",
+        "name": "",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "0",
+        "randomLast": "2000",
+        "randomUnits": "milliseconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 840,
+        "wires": [
+            [
+                "cd4f032f11629f2c"
+            ]
+        ]
+    },
+    {
+        "id": "959636ef02f77b58",
+        "type": "delay",
+        "z": "16d7fc4a1a49f696",
+        "name": "",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "0",
+        "randomLast": "2500",
+        "randomUnits": "milliseconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 940,
+        "wires": [
+            [
+                "8266b665c2f1de1f"
+            ]
+        ]
+    },
+    {
+        "id": "c7d625ef06e02142",
+        "type": "delay",
+        "z": "16d7fc4a1a49f696",
+        "name": "",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "0",
+        "randomLast": "3000",
+        "randomUnits": "milliseconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 1040,
+        "wires": [
+            [
+                "78e62d0e9e2aa4ab"
+            ]
+        ]
+    },
+    {
+        "id": "a940e2a94f8e11f7",
+        "type": "delay",
+        "z": "16d7fc4a1a49f696",
+        "name": "",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "0",
+        "randomLast": "3500",
+        "randomUnits": "milliseconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 1140,
+        "wires": [
+            [
+                "f6ad756fcf7e6f06"
+            ]
+        ]
+    },
+    {
+        "id": "cb056a1d1fd65f75",
+        "type": "delay",
+        "z": "16d7fc4a1a49f696",
+        "name": "",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "0",
+        "randomLast": "4000",
+        "randomUnits": "milliseconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 1240,
+        "wires": [
+            [
+                "3dd32caeb1e6fbc7"
+            ]
+        ]
+    },
+    {
+        "id": "44b7aa4c.212894",
+        "type": "Kafka Broker",
+        "name": "Kafta",
+        "hosts": [
+            {
+                "host": "192.168.20.140",
+                "port": 29092
+            }
+        ],
+        "hostsEnvVar": "",
+        "connectTimeout": "10000",
+        "requestTimeout": "30000",
+        "autoConnect": "true",
+        "idleConnection": "5",
+        "reconnectOnIdle": "true",
+        "maxAsyncRequests": "10",
+        "checkInterval": "10",
+        "selfSign": true,
+        "usetls": false,
+        "useCredentials": false
+    }
+]
